@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectedItem.pattern}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div class="detail">
+<h2>{{selectedItem.pattern}}</h2>
+<div [innerHTML]="selectedItem.description" ></div>
+</div>
+</ion-content>

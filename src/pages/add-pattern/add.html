@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Content</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" #title></ion-input>
+      </ion-item> </ion-list>
+      <ion-list>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+
+        <ion-textarea #desc></ion-textarea>
+
+      </ion-item>
+      <button ion-button full (click)="addCourse(title,desc)">Full Button</button>
+    </ion-list>
+</ion-content>
