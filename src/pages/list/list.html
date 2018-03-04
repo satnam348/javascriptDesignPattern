@@ -5,7 +5,17 @@
     </button>
     <ion-title>JavaScript Design Patterns</ion-title>
   </ion-navbar>
+
+  <ion-toolbar>
+  <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="true"
+   (ionInput)="onInput($event)"
+[debounce] ="800"
+  (ionCancel)="onCancel($event)">
+  </ion-searchbar></ion-toolbar>
 </ion-header>
+
 
 <ion-content>
     <ion-card>
@@ -13,6 +23,8 @@
     <button ion-item *ngFor="let item of items " (click)="itemTapped($event, item)">
 
       {{item.pattern}}
+      <ion-icon nios="ios-arrow-forward" md="md-arrow-forward" item-end></ion-icon>
+
 
     </button>
   </ion-list>

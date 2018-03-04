@@ -7,7 +7,7 @@ import { FirebaseProvider } from '../../app/services/firebase';
 })
 export class addPage {
   selectedItem: any;
-
+ path ='/home/'
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public firebaseProvider: FirebaseProvider) {
     // If we navigated to this page, we will have an item available as a nav param
@@ -18,6 +18,7 @@ export class addPage {
 
   }
   addCourse(title,description){
+
  const newItem ={
     'pattern': title.value,
     'description':description.value

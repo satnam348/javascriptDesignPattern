@@ -7,12 +7,12 @@ export class FirebaseProvider {
 
   constructor(public afd: AngularFireDatabase) { }
 
-  getCourseItems(){
-    return this.afd.list('/patterns').valueChanges();
+  getCourseItems(path){
+    return this.afd.list(path).valueChanges();
   }
 
   addItem(name) {
-    this.afd.list('/patterns/').push(name);
+    this.afd.list('/home/').push(name);
   }
 
   removeItem(id) {
