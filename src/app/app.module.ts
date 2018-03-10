@@ -11,10 +11,10 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { detailPage } from '../pages/detail/detail';
 import {addPage} from '../pages/add-pattern/add';
-
+import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { FCM } from '@ionic-native/fcm';
 
 const config = {
   apiKey: "AIzaSyCP9P1a5IyS_Z0nbPuyUhiwLhRWInltUSg",
@@ -38,7 +38,8 @@ const config = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,7 +51,7 @@ const config = {
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,FCM,
     FirebaseProvider,
     AdMobFree,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

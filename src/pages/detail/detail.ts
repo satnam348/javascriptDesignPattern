@@ -13,9 +13,7 @@ export class detailPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,  private admobFree : AdMobFree) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
-    setTimeout(() => {
-      this.showInterstitialAd();
-  }, 9000);
+
 
   }
 
