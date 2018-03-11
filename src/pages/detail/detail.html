@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-<div class="detail">
+<div class="" [ngClass]="selectedItem.tips ? 'tips': 'detail'">
 <h2>{{selectedItem.pattern}}</h2>
 <div [innerHTML]="selectedItem.description" ></div>
 </div>

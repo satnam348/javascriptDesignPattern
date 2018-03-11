@@ -1,0 +1,45 @@
+.tips .card .item-md, .tips .card .item-ios {
+  border-bottom: 1px solid #ece8e8;
+}
+.tips {
+  padding: 0 20px;
+  margin-top: 20px;
+}
+.tips :not(pre) > code[class*="language-"], .tips pre[class*="language-"],.tips pre {
+  background: #f5f2f0 !important;
+}
+.tips pre[class*="language-"], .tips pre {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+.tips code[class*="language-"], .tips pre[class*="language-"] {
+  color: black;
+  background: none;
+  text-shadow: 0 1px white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+.tips .token.atrule, .tips .token.attr-value, .tips .token.keyword {
+  color: #07a;
+}
+.tips .token.function {
+  color: #DD4A68;
+}
+.tips .token.punctuation {
+  color: #999;
+}
+.tips .token.operator, .tips .token.entity, .tips .token.url, .tips .language-css .token.string, .tips .style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}

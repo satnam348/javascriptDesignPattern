@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{selectedItem.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+      <img src="https://cdn-images-1.medium.com/max/800/0*Co9Hk-VtMLfM08KH.png"/>
+      <ion-card-content>
+        <ion-card-title [innerHTML]="selectedItem.title">
+
+          </ion-card-title>
+       <div [innerHTML]="selectedItem.description"></div>
+       <ion-row>
+          <ion-col  padding-vertical>
+
+
+  <strong> <span class="color" (click)="openWebpage(selectedItem.link)">Read Full Article</span></strong>
+
+          </ion-col>
+          <ion-col  padding-vertical>
+              <strong> <span  >{{selectedItem.pubDate | date}}</span></strong>
+             <!-- <ion-icon name="share"></ion-icon>  <a [href]="selectedItem.link">Read Full Article</a>-->
+
+          </ion-col>
+</ion-row>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>

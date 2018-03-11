@@ -4,6 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Storage } from '@ionic/storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListPage } from '../pages/list/list';
+import { TipsPage } from '../pages/tips/tips';
+import { RSSPage } from '../pages/rss/rss';
 // import { addPage } from '../pages/add-pattern/add';
 import { HomePage } from '../pages/home/home';
 import { FCM } from '@ionic-native/fcm';
@@ -25,7 +27,7 @@ export class MyApp {
     if ( this.platform.is('android') ) {
       this.platform.ready().then(() => {
            this.statusBar.overlaysWebView(false);
-          this.statusBar.backgroundColorByHexString('#488aff');
+           this.statusBar.backgroundColorByHexString('#2876ff');
 
 
           this.fcm.subscribeToTopic('post_update');
@@ -36,8 +38,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Patterns', component: ListPage }
-     // { title: 'add', component: addPage }
+      { title: 'Patterns', component: ListPage },
+      { title: 'Tips', component: TipsPage },
+      { title: 'JavaScript Blogs', component: RSSPage }
+    // { title: 'add', component: addPage }
     ];
 
   }
@@ -47,7 +51,7 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.overlaysWebView(false);
-      this.statusBar.backgroundColorByHexString("#488aff")
+      this.statusBar.backgroundColorByHexString("#3177f5")
       this.splashScreen.hide();
     });
   }

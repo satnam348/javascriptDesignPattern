@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>JavaScript Blogs</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content >
+    <p padding-horizontal>Learn JavaScript and stay connected with the latest news created and curated by the JavaScript community.</p>
+
+<ion-list >
+    <button ion-item  *ngFor="let item of items"  (click)="itemTapped($event,item)">
+      {{ item.title }}
+    </button>
+  </ion-list>
+</ion-content>
+
+

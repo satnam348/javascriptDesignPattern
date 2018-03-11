@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
@@ -15,7 +17,12 @@ import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FCM } from '@ionic-native/fcm';
-
+import {DataService} from './services/data-service';
+import { TipsPage } from '../pages/tips/tips';
+import { RSSPage } from '../pages/rss/rss';
+import { newsreaderPage } from '../pages/newsreader/newsreader';
+import { FeedService } from './services/http.service';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 const config = {
   apiKey: "AIzaSyCP9P1a5IyS_Z0nbPuyUhiwLhRWInltUSg",
   authDomain: "jsdesignpattern.firebaseapp.com",
@@ -31,7 +38,10 @@ const config = {
     HomePage,
     ListPage,
     detailPage,
-    addPage
+    addPage,
+    TipsPage,
+    RSSPage,
+    newsreaderPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +49,8 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,12 +58,18 @@ const config = {
     HomePage,
     ListPage,
     detailPage,
-    addPage
+    addPage,
+    TipsPage,
+    RSSPage,
+    newsreaderPage
   ],
   providers: [
     StatusBar,
     SplashScreen,FCM,
     FirebaseProvider,
+    DataService,
+    FeedService,
+    InAppBrowser,
     AdMobFree,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

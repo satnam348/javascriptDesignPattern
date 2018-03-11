@@ -3,17 +3,10 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>JavaScript Design Patterns</ion-title>
+    <ion-title>JavaScript Tips</ion-title>
   </ion-navbar>
 
-  <ion-toolbar>
-  <ion-searchbar
-  [(ngModel)]="myInput"
-  [showCancelButton]="true"
-   (ionInput)="onInput($event)"
-[debounce] ="800"
-  (ionCancel)="onCancel($event)">
-  </ion-searchbar></ion-toolbar>
+
 </ion-header>
 
 
@@ -23,7 +16,6 @@
     <button ion-item *ngFor="let item of items " (click)="itemTapped($event, item)">
 
       {{item.pattern}}
-      <ion-icon nios="ios-arrow-forward" md="md-arrow-forward" item-end></ion-icon>
 
 
     </button>
@@ -31,3 +23,5 @@
 
 
 </ion-content>
+
+

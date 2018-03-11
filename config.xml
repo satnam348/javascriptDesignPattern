@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.javascript.patterns" version="0.0.8" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.javascript.patterns" version="1.4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>JS Pattern</name>
     <description>JavaScript Design Patterns</description>
     <author email="satnammca@gmail.com" href="http://ionicframework.com/">DXT Team</author>
@@ -20,7 +20,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="4000" />
     <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="StatusBarBackgroundColor" value="#488aff" />
+    <preference name="StatusBarBackgroundColor" value="#2876ff" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <platform name="android">
         <allow-intent href="market:*" />
@@ -87,5 +87,6 @@
     <plugin name="lycwed-cordova-plugin-admob-free" spec="https://github.com/RenaudROHLINGER/lycwed-cordova-plugin-admob-free" />
     <allow-navigation href="http://192.168.88.105:8100" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
     <engine name="android" spec="7.0.0" />
 </widget>
