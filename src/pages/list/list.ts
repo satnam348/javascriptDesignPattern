@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams , Platform} from 'ionic-angular';
 import { detailPage } from '../detail/detail';
-import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
 import { DataService } from '../../app/services/data-service';
 @Component({
   selector: "page-list",
@@ -16,7 +15,6 @@ export class ListPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private admobFree: AdMobFree,
     public plt: Platform,
     public dataService: DataService,
   ) {
@@ -24,7 +22,6 @@ export class ListPage {
     this.dataService.notify.subscribe((data)=>{
       this.items = data;
      });
-    this.showAdmobBannerAds();
   }
 
   itemTapped(event, item) {
@@ -45,25 +42,8 @@ export class ListPage {
     this.items = this.dataService.getItems( this.path, this.storePath);
   }
 
-  showAdmobBannerAds() {
-    const bannerConfig: AdMobFreeBannerConfig = {
-      id: "ca-app-pub-8213425045945298/6249679746",
-      isTesting: false,
-      autoShow: true
-    };
-    this.admobFree.banner.config(bannerConfig);
 
-    this.admobFree.banner
-      .prepare()
-      .then(() => {
-        this.admobFree.banner.show();
-      })
-      .catch(e => console.log(e));
-  }
   ionViewWillLeave() {
-    if (this.plt.is("android")) {
-      this.admobFree.banner.hide();
-    }
     this.dataService.items = [];
   }
 }

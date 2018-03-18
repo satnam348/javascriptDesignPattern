@@ -22,6 +22,7 @@ import { TipsPage } from '../pages/tips/tips';
 import { RSSPage } from '../pages/rss/rss';
 import { newsreaderPage } from '../pages/newsreader/newsreader';
 import { FeedService } from './services/http.service';
+import { AdsSericeProvider } from './services/add-service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 const config = {
   apiKey: "AIzaSyCP9P1a5IyS_Z0nbPuyUhiwLhRWInltUSg",
@@ -69,6 +70,7 @@ const config = {
     FirebaseProvider,
     DataService,
     FeedService,
+    AdsSericeProvider,
     InAppBrowser,
     AdMobFree,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

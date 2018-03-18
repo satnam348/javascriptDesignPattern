@@ -27,7 +27,7 @@ this.dataService.loaderStart();
 let a: any = {};
 a.resp = this.convertToJson(res._body);
 let feed =  a.resp.rss.channel.item  ;
-    // let feed =res[0].json().items.concat(res[1].json().items);
+localStorage.setItem('feeds',JSON.stringify(feed));
     this.dataService.loaderClose();
     return feed || { };
   }

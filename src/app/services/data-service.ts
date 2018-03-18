@@ -1,7 +1,7 @@
 import { Injectable,EventEmitter } from '@angular/core';
 import { FirebaseProvider } from './firebase';
 import { LoadingController } from 'ionic-angular';
-import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
+
 @Injectable()
 export class DataService {
 loadingStart;
@@ -11,7 +11,7 @@ public notify: EventEmitter<any> = new EventEmitter();
   constructor(
     public firebaseProvider: FirebaseProvider,
     public loadingCtrl: LoadingController,
-    private admobFree: AdMobFree,
+
   ) { }
   getItems(path,storagePath) {
     var current = new Date();
@@ -46,23 +46,5 @@ loaderStart(){
 }
 loaderClose(){
   this.loadingStart.dismiss();
-}
-showAdmobBannerAds() {
-  const bannerConfig: AdMobFreeBannerConfig = {
-    id: "ca-app-pub-8213425045945298/6249679746",
-    isTesting: false,
-    autoShow: true
-  };
-  this.admobFree.banner.config(bannerConfig);
-
-  this.admobFree.banner
-    .prepare()
-    .then(() => {
-      this.admobFree.banner.show();
-    })
-    .catch(e => console.log(e));
-}
-removeBanner(){
-  this.admobFree.banner.hide();
 }
 }
