@@ -3,7 +3,7 @@ import {  Nav,NavController } from 'ionic-angular';
 import { DataService } from '../../app/services/data-service';
 
 import { ListPage } from '../list/list';
-import { AdMobFree, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
+// import { AdMobFree, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -12,11 +12,12 @@ export class HomePage {
   items = [];
 path = '/home/';
 storePath= 'dataHomeItem';
+splash = true;
   constructor(public navCtrl: NavController,
     public dataService: DataService,
 
-    public nav: Nav,
-    private admobFree : AdMobFree
+    public nav: Nav
+    // private admobFree : AdMobFree
 
   ) {
  this.items =this.dataService.getItems( this.path, this.storePath);
@@ -26,7 +27,7 @@ storePath= 'dataHomeItem';
  });
 setTimeout(() => {
 if( sessionStorage.getItem('count') == null){
-  this.showInterstitialAd();
+  //this.showInterstitialAd();
   sessionStorage.setItem('count', '1');
 }
 },7000);
@@ -38,21 +39,24 @@ if( sessionStorage.getItem('count') == null){
     this.nav.setRoot(ListPage);
   }
 
-  showInterstitialAd(){
-    const interstitialConfig: AdMobFreeInterstitialConfig= {
-      id: 'ca-app-pub-8213425045945298/8953834325',
-      isTesting: false,
-      autoShow: true
-    };
-    this.admobFree.interstitial.config(interstitialConfig);
+  // showInterstitialAd(){
+  //   const interstitialConfig: AdMobFreeInterstitialConfig= {
+  //     id: 'ca-app-pub-8213425045945298/8953834325',
+  //     isTesting: false,
+  //     autoShow: true
+  //   };
+  //   this.admobFree.interstitial.config(interstitialConfig);
 
-    this.admobFree.interstitial.prepare()
-    .then(() => {
-      this.admobFree.interstitial.show();
-    })
-    .catch(e => console.log(e));
-    }
+  //   this.admobFree.interstitial.prepare()
+  //   .then(() => {
+  //     this.admobFree.interstitial.show();
+  //   })
+  //   .catch(e => console.log(e));
+  //   }
     ionViewWillLeave() {
       this.dataService.items = [];
+    }
+    ionViewDidLoad() {
+      setTimeout(() => this.splash = false, 6000);
     }
 }

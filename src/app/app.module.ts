@@ -7,7 +7,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { FirebaseProvider } from './services/firebase';
-import { AdMobFree } from '@ionic-native/admob-free';
+// import { AdMobFree } from '@ionic-native/admob-free';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -16,22 +16,23 @@ import {addPage} from '../pages/add-pattern/add';
 import { IonicStorageModule } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { FCM } from '@ionic-native/fcm';
+
 import {DataService} from './services/data-service';
 import { TipsPage } from '../pages/tips/tips';
 import { RSSPage } from '../pages/rss/rss';
 import { newsreaderPage } from '../pages/newsreader/newsreader';
 import { FeedService } from './services/http.service';
-import { AdsSericeProvider } from './services/add-service';
+// import { AdsSericeProvider } from './services/add-service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import {javascriptPage} from '../pages/javascript/javascript';
 const config = {
-  apiKey: "AIzaSyCP9P1a5IyS_Z0nbPuyUhiwLhRWInltUSg",
-  authDomain: "jsdesignpattern.firebaseapp.com",
-  databaseURL: "https://jsdesignpattern.firebaseio.com",
-  projectId: "jsdesignpattern",
-  storageBucket: "jsdesignpattern.appspot.com",
-  messagingSenderId: "472035230037"
-};
+  apiKey: "AIzaSyBiuB_aNOSTCWyvIRHIdE5Np3M7KSGtkFo",
+    authDomain: "javascript-bec12.firebaseapp.com",
+    databaseURL: "https://javascript-bec12.firebaseio.com",
+    projectId: "javascript-bec12",
+    storageBucket: "javascript-bec12.appspot.com",
+    messagingSenderId: "871945422885"
+}
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ const config = {
     addPage,
     TipsPage,
     RSSPage,
-    newsreaderPage
+    newsreaderPage,
+    javascriptPage
   ],
   imports: [
     BrowserModule,
@@ -62,17 +64,18 @@ const config = {
     addPage,
     TipsPage,
     RSSPage,
-    newsreaderPage
+    newsreaderPage,
+    javascriptPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,FCM,
+    SplashScreen,
     FirebaseProvider,
     DataService,
     FeedService,
-    AdsSericeProvider,
+    //AdsSericeProvider,
     InAppBrowser,
-    AdMobFree,
+    // AdMobFree,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { InAppBrowser, InAppBrowserOptions } from "@ionic-native/in-app-browser";
-import { AdsSericeProvider } from '../../app/services/add-service';
+//import { AdsSericeProvider } from '../../app/services/add-service';
 
 @Component({
   selector: 'newsreader',
@@ -12,14 +12,14 @@ export class newsreaderPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private inAppBrowser: InAppBrowser,
-    private AdsSerice :AdsSericeProvider
+    private inAppBrowser: InAppBrowser
+   // private AdsSerice :AdsSericeProvider
 
   ) {
     // If we navigated to this page, we will have an item available as a nav param
    this.selectedItem = navParams.get('item');
-   this.AdsSerice.showAdmobBannerAds();
-   this.AdsSerice.showInterstitialAd();
+  //  this.AdsSerice.showAdmobBannerAds();
+  //  this.AdsSerice.showInterstitialAd();
   }
   openWebpage(url: string) {
     const options: InAppBrowserOptions = {

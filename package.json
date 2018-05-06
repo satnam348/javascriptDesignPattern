@@ -31,18 +31,15 @@
     "@types/lodash": "^4.14.104",
     "angularfire2": "^5.0.0-rc.6",
     "cordova-android": "7.0.0",
-    "cordova-plugin-device": "^2.0.1",
+    "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-inappbrowser": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
-    "cordova-plugin-ionic-webview": "^1.1.16",
     "cordova-plugin-splashscreen": "^5.0.2",
-    "cordova-plugin-statusbar": "^2.4.1",
+    "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
-    "cordova-promise-polyfill": "0.0.2",
     "firebase": "^4.10.1",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
-    "lycwed-cordova-plugin-admob-free": "git+https://github.com/RenaudROHLINGER/lycwed-cordova-plugin-admob-free.git",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
     "xml2js": "^0.4.19",
@@ -57,14 +54,12 @@
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "lycwed-cordova-plugin-admob-free": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-whitelist": {}
     },
     "platforms": [
       "android"

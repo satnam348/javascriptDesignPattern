@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AdsSericeProvider } from '../../app/services/add-service';
+// import { AdsSericeProvider } from '../../app/services/add-service';
 
 @Component({
   selector: 'detail',
@@ -10,15 +10,15 @@ export class detailPage {
   selectedItem: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    private AdsSerice :AdsSericeProvider
+  constructor(public navCtrl: NavController, public navParams: NavParams
+    // private AdsSerice :AdsSericeProvider
   ) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
-    this.AdsSerice.showAdmobBannerAds();
+    // this.AdsSerice.showAdmobBannerAds();
   }
 
   ionViewWillLeave() {
-    this.AdsSerice.removeBanner();
+    //this.AdsSerice.removeBanner();
   }
  }

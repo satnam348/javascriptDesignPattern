@@ -17,7 +17,7 @@ public notify: EventEmitter<any> = new EventEmitter();
     var current = new Date();
     var numberOfDaysToAdd = 6;
     if (localStorage.getItem(storagePath) == null) {
-    this.loaderStart();
+    //this.loaderStart();
       this.firebaseProvider.getCourseItems(path).subscribe(data => {
         this.items = data;
         this.notify.next(data);
@@ -26,8 +26,8 @@ public notify: EventEmitter<any> = new EventEmitter();
           "date",
           JSON.stringify(current.setDate(current.getDate() + numberOfDaysToAdd))
         );
-        this.loaderClose();
-      });
+      //  this.loaderClose();
+      },error => {alert("error"+ JSON.stringify(error))});
     } else {
       this.items = JSON.parse(localStorage.getItem(storagePath));
       const getSessionDate = JSON.parse(localStorage.getItem("date"));

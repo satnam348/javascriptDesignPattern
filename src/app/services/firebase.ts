@@ -12,7 +12,7 @@ export class FirebaseProvider {
   }
 
   addItem(name) {
-    this.afd.list('/tips/').push(name);
+    this.afd.list('/javascript/').push(name);
   }
 
   removeItem(id) {

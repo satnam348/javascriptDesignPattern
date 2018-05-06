@@ -2,29 +2,27 @@ import { Component } from '@angular/core';
 import { NavController, NavParams , Platform} from 'ionic-angular';
 import { detailPage } from '../detail/detail';
 import { DataService } from '../../app/services/data-service';
-// import { AdsSericeProvider } from '../../app/services/add-service';
+
 @Component({
-  selector: "app-tips",
-  templateUrl: "tips.html"
+  selector: "app-javascript",
+  templateUrl: "javascript.html"
 })
-export class TipsPage {
+export class javascriptPage  {
   selectedItem: any;
   myInput = "";
   items = [];
-  path = '/tips';
-  storePath= 'jsTips';
+  path = '/javascript';
+  storePath= 'dataItemJavascript';
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public plt: Platform,
-    public dataService: DataService
-  //  private AdsSerice :AdsSericeProvider,
+    public dataService: DataService,
   ) {
     this.items = this.dataService.getItems( this.path, this.storePath);
     this.dataService.notify.subscribe((data)=>{
       this.items = data;
      });
-    // this.AdsSerice.showAdmobBannerAds();
   }
 
   itemTapped(event, item) {
@@ -33,12 +31,21 @@ export class TipsPage {
       item: item
     });
   }
-
-  ionViewWillLeave() {
-    if (this.plt.is("android")) {
-    //  this.AdsSerice.removeBanner();
+  onInput(event) {
+    this.items = this.dataService.getItems( this.path, this.storePath);
+    let val = event.target.value;
+    if (val && val.trim() != "") {
+      this.items = this.items.filter(item => {
+        return item.pattern.toLowerCase().indexOf(val.toLowerCase()) > -1;
+      });
     }
-    this.dataService.items = [];
+  }
+  onCancel($event) {
+    this.items = this.dataService.getItems( this.path, this.storePath);
   }
 
+
+  ionViewWillLeave() {
+    this.dataService.items = [];
+  }
 }
